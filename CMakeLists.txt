@@ -6,7 +6,11 @@ if(WIN32)
 endif()
 
 add_executable(GTASymlinkGenerator
-    "GTA Symlink Generator.cpp"
+        "src/GTA Symlink Generator.cpp"
+)
+
+target_include_directories(GTASymlinkGenerator PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}"
 )
 
 target_compile_features(GTASymlinkGenerator PRIVATE cxx_std_20)
