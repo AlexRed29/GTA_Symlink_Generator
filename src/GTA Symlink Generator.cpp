@@ -1,7 +1,7 @@
 // GTA Symlink Generator.cpp
 // Created by: AlexRed29X
 //
-// Ultima Modificacion: 15 Septiembre 2026
+// Ultima Modificacion: 15 Octubre 2026
 //
 
 
@@ -12,11 +12,15 @@
 #include <vector>
 #include <fstream>
 #include <unordered_map>
+#include <cstdlib>
 
+#ifdef _WIN32
 #define NOMINMAX
 #include <Windows.h>
 #include "resource.h"
+#endif
 #include <sstream>
+
 
 
 // ========================================
@@ -27,6 +31,7 @@ std::unordered_map<std::string, std::string> language;
 
 bool loadLanguage(const std::string& filename)
 {
+#ifdef _WIN32
     HRSRC resource = nullptr;
 
     if (filename == "languages/English.ini")
@@ -56,6 +61,31 @@ bool loadLanguage(const std::string& filename)
         return false;
 
     std::string text(content, size);
+#else
+    std::string externalFilename;
+
+    if (filename == "languages/English.ini")
+        externalFilename = "Languages/english.ini";
+    else if (filename == "languages/Spanish.ini")
+        externalFilename = "Languages/spanish.ini";
+    else if (filename == "languages/portuguese.ini")
+        externalFilename = "Languages/portuguese.ini";
+    else if (filename == "languages/french.ini")
+        externalFilename = "Languages/french.ini";
+    else if (filename == "languages/german.ini")
+        externalFilename = "Languages/german.ini";
+    else
+        return false;
+
+    std::ifstream languageFile(externalFilename, std::ios::binary);
+
+    if (!languageFile)
+        return false;
+
+    std::ostringstream contents;
+    contents << languageFile.rdbuf();
+    std::string text = contents.str();
+#endif
 
     std::istringstream file(text);
 
@@ -99,6 +129,36 @@ std::string getText(const std::string& key)
 }
 
 
+std::filesystem::path pathFromUserInput(std::string text)
+{
+    const std::string whitespace = " \t\r\n";
+    const auto first = text.find_first_not_of(whitespace);
+
+    if (first == std::string::npos)
+        text.clear();
+    else
+        text = text.substr(first, text.find_last_not_of(whitespace) - first + 1);
+
+    if (text.size() >= 2 &&
+        ((text.front() == '"' && text.back() == '"') ||
+         (text.front() == '\'' && text.back() == '\'')))
+    {
+        text = text.substr(1, text.size() - 2);
+    }
+
+#ifndef _WIN32
+    if (!text.empty() && text.front() == '~' &&
+        (text.size() == 1 || text[1] == '/'))
+    {
+        if (const char* home = std::getenv("HOME"))
+            text.replace(0, 1, home);
+    }
+#endif
+
+    return std::filesystem::path(text);
+}
+
+
 
 
 // ========================================
@@ -107,7 +167,67 @@ std::string getText(const std::string& key)
 
 void clearScreen()
 {
+#ifdef _WIN32
     system("cls");
+#else
+    std::cout << "\033[2J\033[H" << std::flush;
+#endif
+}
+
+
+enum class ConsoleColor
+{
+    Warning,
+    Error,
+    Success
+};
+
+#ifdef _WIN32
+WORD previousConsoleAttributes = 0;
+bool consoleColorChanged = false;
+#endif
+
+void setConsoleColor(ConsoleColor color)
+{
+#ifdef _WIN32
+    HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
+    CONSOLE_SCREEN_BUFFER_INFO info{};
+
+    if (!GetConsoleScreenBufferInfo(console, &info))
+        return;
+
+    previousConsoleAttributes = info.wAttributes;
+
+    WORD attributes = color == ConsoleColor::Warning
+        ? FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY
+        : color == ConsoleColor::Error
+            ? FOREGROUND_RED | FOREGROUND_INTENSITY
+            : FOREGROUND_GREEN | FOREGROUND_INTENSITY;
+
+    consoleColorChanged = SetConsoleTextAttribute(console, attributes) != 0;
+#else
+    const char* escapeCode = color == ConsoleColor::Warning
+        ? "\033[93m"
+        : color == ConsoleColor::Error
+            ? "\033[91m"
+            : "\033[92m";
+    std::cout << escapeCode;
+#endif
+}
+
+void resetConsoleColor()
+{
+#ifdef _WIN32
+    if (consoleColorChanged)
+    {
+        SetConsoleTextAttribute(
+            GetStdHandle(STD_OUTPUT_HANDLE),
+            previousConsoleAttributes);
+        consoleColorChanged = false;
+    }
+#else
+    std::cout << "\033[0m";
+#endif
 }
 
 
@@ -131,6 +251,7 @@ bool createSymlink(
         return false;
     }
 
+#ifdef _WIN32
     DWORD flags =
         isDirectory
         ? (SYMBOLIC_LINK_FLAG_DIRECTORY |
@@ -147,10 +268,28 @@ bool createSymlink(
 
     DWORD error = GetLastError();
 
+    setConsoleColor(ConsoleColor::Error);
     std::cout << getText("ERROR_CREATE_SYMLINK") << "\n";
     std::cout << "Windows error code: " << error << "\n\n\n";
 
     std::cout << getText("FIX_1314") << "\n";
+    resetConsoleColor();
+#else
+    std::error_code error;
+
+    if (isDirectory)
+        std::filesystem::create_directory_symlink(source, destination, error);
+    else
+        std::filesystem::create_symlink(source, destination, error);
+
+    if (!error)
+        return true;
+
+    setConsoleColor(ConsoleColor::Error);
+    std::cout << getText("ERROR_CREATE_SYMLINK") << "\n";
+    std::cout << error.message() << "\n";
+    resetConsoleColor();
+#endif
 
     return false;
 }
@@ -257,6 +396,7 @@ void createGameSymlink(
     {
         clearScreen();
 
+        setConsoleColor(ConsoleColor::Warning);
         std::cout << "\n========================================\n\n";
         std::cout << getText("WARNING") << "\n";
         std::cout << getText("FULLGAME") << "\n\n";
@@ -274,6 +414,7 @@ void createGameSymlink(
         std::cout << getText("BAD_SYMLINK") << "\n\n";
 
         std::cout << getText("RETURN_ENTER") << "\n";
+        resetConsoleColor();
 
         std::cin.ignore(
             std::numeric_limits<std::streamsize>::max(),
@@ -332,8 +473,8 @@ void createGameSymlink(
     std::getline(std::cin, destinationText);
 
 
-    std::filesystem::path source(sourceText);
-    std::filesystem::path destination(destinationText);
+    std::filesystem::path source = pathFromUserInput(sourceText);
+    std::filesystem::path destination = pathFromUserInput(destinationText);
 
 
     // ========================================
@@ -348,6 +489,7 @@ void createGameSymlink(
     if (!std::filesystem::exists(source))
     {
         std::cout << "Source: ERROR - Path does not exist.\n";
+        std::cout << "Checked path: " << source << "\n";
 
         std::cout << getText("PRESS_ENTER") << "\n";
         std::cin.get();
@@ -373,6 +515,7 @@ void createGameSymlink(
     if (!std::filesystem::exists(destination))
     {
         std::cout << "Destination: ERROR - Path does not exist.\n\n";
+        std::cout << "Checked path: " << destination << "\n";
 
         std::cout << "You must create the destination folder first.\n";
 
@@ -620,7 +763,7 @@ void createGameSymlink(
 
     for (const auto& element : symlinks)
     {
-        std::filesystem::path sourcePath =
+          std::filesystem::path sourcePath =
             source / element;
 
         std::filesystem::path destinationPath =
@@ -635,8 +778,10 @@ void createGameSymlink(
             sourcePath,
             destinationPath))
         {
+            setConsoleColor(ConsoleColor::Success);
             std::cout << "OK\n";
             symlinksCreated++;
+            resetConsoleColor();
         }
         else
         {
@@ -670,6 +815,8 @@ void createGameSymlink(
     // ========================================
     // COPY FILES
     // ========================================
+    
+
 
     int elementsCopied = 0;
 
@@ -691,8 +838,10 @@ void createGameSymlink(
             sourcePath,
             destinationPath))
         {
+            setConsoleColor(ConsoleColor::Success);
             std::cout << "OK\n";
             elementsCopied++;
+            resetConsoleColor();
         }
         else
         {
@@ -727,10 +876,12 @@ void createGameSymlink(
         << gameName
         << " processed successfully.\n\n\n";
 
+    setConsoleColor(ConsoleColor::Success);
     std::cout << "\n========================================\n\n";
     std::cout << getText("MISSION_PASSED") << "\n";
     std::cout << getText("RESPECT_PLUS") << "\n\n";
     std::cout << "========================================\n\n\n";
+    resetConsoleColor();
 
 
     std::cout << getText("PRESS_ENTER") << "\n";
@@ -790,8 +941,8 @@ void createModSymlink()
     std::getline(std::cin, modloaderText);
 
 
-    std::filesystem::path source(sourceText);
-    std::filesystem::path modloader(modloaderText);
+    std::filesystem::path source = pathFromUserInput(sourceText);
+    std::filesystem::path modloader = pathFromUserInput(modloaderText);
 
 
     // ========================================
@@ -806,6 +957,7 @@ void createModSymlink()
     if (!std::filesystem::exists(source))
     {
         std::cout << "\n" << getText("ERROR_NOTEXIST") << "\n";
+        std::cout << "Checked path: " << source << "\n";
 
         std::cout << getText("PRESS_ENTER") << "\n";
         std::cin.get();
@@ -831,6 +983,7 @@ void createModSymlink()
     if (!std::filesystem::exists(modloader))
     {
         std::cout << "\n" << getText("ERROR_MODLOADER1") << "\n";
+        std::cout << "Checked path: " << modloader << "\n";
         std::cout << "\n" << getText("ERROR_MODLOADER2") << "\n";
 
         std::cout << getText("PRESS_ENTER") << "\n";
@@ -985,6 +1138,7 @@ void createModSymlink()
         source,
         finalDestination))
     {
+        setConsoleColor(ConsoleColor::Success);
         std::cout << "\n========================================\n";
         std::cout << "\n" << getText("RESULT") << "\n\n";
         std::cout << "========================================\n\n";
@@ -1000,10 +1154,12 @@ void createModSymlink()
         std::cout << "Destination:\n";
         std::cout << finalDestination.string() << "\n\n\n";
 
+
         std::cout << "\n========================================\n\n";
         std::cout << getText("MISSION_PASSED") << "\n";
         std::cout << getText("RESPECT_PLUS") << "\n\n";
         std::cout << "========================================\n\n\n";
+        resetConsoleColor();
     }
     else
     {
@@ -1032,8 +1188,10 @@ void createModSymlink()
 
 int main()
 {
+#ifdef _WIN32
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
+#endif
 
     int languageOption;
 
