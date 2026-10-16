@@ -34,9 +34,9 @@ bool loadLanguage(const std::string& filename)
 #ifdef _WIN32
     HRSRC resource = nullptr;
 
-    if (filename == "languages/English.ini")
+    if (filename == "languages/english.ini")
         resource = FindResource(nullptr, MAKEINTRESOURCE(ENGLISH_INI), RT_RCDATA);
-    else if (filename == "languages/Spanish.ini")
+    else if (filename == "languages/spanish.ini")
         resource = FindResource(nullptr, MAKEINTRESOURCE(SPANISH_INI), RT_RCDATA);
     else if (filename == "languages/portuguese.ini")
         resource = FindResource(nullptr, MAKEINTRESOURCE(PORTUGUESE_INI), RT_RCDATA);
@@ -64,16 +64,16 @@ bool loadLanguage(const std::string& filename)
 #else
     std::string externalFilename;
 
-    if (filename == "languages/English.ini")
-        externalFilename = "Languages/english.ini";
-    else if (filename == "languages/Spanish.ini")
-        externalFilename = "Languages/spanish.ini";
+    if (filename == "languages/english.ini")
+        externalFilename = "languages/english.ini";
+    else if (filename == "languages/spanish.ini")
+        externalFilename = "languages/spanish.ini";
     else if (filename == "languages/portuguese.ini")
-        externalFilename = "Languages/portuguese.ini";
+        externalFilename = "languages/portuguese.ini";
     else if (filename == "languages/french.ini")
-        externalFilename = "Languages/french.ini";
+        externalFilename = "languages/french.ini";
     else if (filename == "languages/german.ini")
-        externalFilename = "Languages/german.ini";
+        externalFilename = "languages/german.ini";
     else
         return false;
 
@@ -1231,9 +1231,9 @@ int main()
 
         if (languageOption == 1)
         {
-            if (!loadLanguage("languages/English.ini"))
+            if (!loadLanguage("languages/english.ini"))
             {
-                std::cout << "\nERROR: Could not load English.ini\n";
+                std::cout << "\nERROR: Could not load english.ini\n";
                 return 1;
             }
 
@@ -1241,9 +1241,9 @@ int main()
         }
         else if (languageOption == 2)
         {
-            if (!loadLanguage("languages/Spanish.ini"))
+            if (!loadLanguage("languages/spanish.ini"))
             {
-                std::cout << "\nERROR: Could not load Spanish.ini\n";
+                std::cout << "\nERROR: Could not load spanish.ini\n";
                 return 1;
             }
 
