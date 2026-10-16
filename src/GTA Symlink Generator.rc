@@ -65,8 +65,8 @@ GERMAN_INI              RCDATA                  "languages/german.ini"
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 2,0,2,0
- PRODUCTVERSION 2,0,2,0
+ FILEVERSION 2,1,0,0
+ PRODUCTVERSION 2,1,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -81,14 +81,14 @@ BEGIN
     BEGIN
         BLOCK "080a04b0"
         BEGIN
-            VALUE "CompanyName", "AlexRed29"
+            VALUE "CompanyName", "AlexRed29X"
             VALUE "FileDescription", "GTA Symlink Generator"
-            VALUE "FileVersion", "2.0.2.0"
+            VALUE "FileVersion", "2.1.0.0"
             VALUE "InternalName", "GTASymlinkGenerator.exe"
             VALUE "LegalCopyright", "Copyright (C) 2026 AlexRed29"
             VALUE "OriginalFilename", "GTASymlinkGenerator.exe"
             VALUE "ProductName", "GTA Symlink Generator"
-            VALUE "ProductVersion", "2.0.2.0"
+            VALUE "ProductVersion", "2.1.0.0"
         END
     END
     BLOCK "VarFileInfo"
