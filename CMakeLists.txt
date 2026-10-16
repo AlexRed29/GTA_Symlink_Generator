@@ -20,7 +20,7 @@ if(WIN32)
 else()
     add_custom_command(TARGET GTASymlinkGenerator POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_directory
-            "${CMAKE_CURRENT_SOURCE_DIR}/Languages"
-            "$<TARGET_FILE_DIR:GTASymlinkGenerator>/Languages"
+            "${CMAKE_CURRENT_SOURCE_DIR}/languages"
+            "$<TARGET_FILE_DIR:GTASymlinkGenerator>/languages"
     )
 endif()
