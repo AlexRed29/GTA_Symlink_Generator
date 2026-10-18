@@ -82,13 +82,13 @@ This means saving disk space! <br>
 ### 1. Let's [**"Releases"**](https://github.com/AlexRed29/GTASymlinkGenerator/releases)
 ### 2. Let's download the ***".zip"***.
 ### 3. We are going to extract the ".zip" with 7Zip or WinRAR*.
-### 4. Open the program and the steps to create our **"GTA Symlink"**. <br> <br> <br>
+### 4. Open the program and the steps to create our **"GTA Symlink"**. <br> <br> 
 
 # INSTALLATION (Linux)
 ### 1. Let's [**"Releases"**](https://github.com/AlexRed29/GTASymlinkGenerator/releases)
 ### 2. Let's download the ***".zip"***.
 ### 3. We are going to extract the ".zip" with 7Zip or WinRAR*.
-### 4. Open the terminal and use de command ***./GTASymlinkGenerator***. <br> <br> <br>
+### 4. Open the terminal and use the command ***./GTASymlinkGenerator*** .<br> <br> <br>
 
 
 ## STEPS TO FOLLOW
