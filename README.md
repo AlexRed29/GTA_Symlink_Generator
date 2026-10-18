@@ -1,6 +1,6 @@
 # GTA Symlink Generator
 ###### Created by: AlexRed29X
-###### Updated to: September 15th 2026
+###### Updated to: October 17th 2026
 
 <img width="720" height="560" alt="GTA-Symlink-Generator-logo" src="https://github.com/user-attachments/assets/3aed5ee0-9a55-49db-94a3-b367a3cc12e2" />
 
@@ -78,11 +78,17 @@ This means saving disk space! <br>
 - Portable (No need to install anything!).
 <br> <br> <br>
 
-# INSTALLATION
+# INSTALLATION (Windows)
 ### 1. Let's [**"Releases"**](https://github.com/AlexRed29/GTASymlinkGenerator/releases)
 ### 2. Let's download the ***".zip"***.
 ### 3. We are going to extract the ".zip" with 7Zip or WinRAR*.
 ### 4. Open the program and the steps to create our **"GTA Symlink"**. <br> <br> <br>
+
+# INSTALLATION (Linux)
+### 1. Let's [**"Releases"**](https://github.com/AlexRed29/GTASymlinkGenerator/releases)
+### 2. Let's download the ***".zip"***.
+### 3. We are going to extract the ".zip" with 7Zip or WinRAR*.
+### 4. Open the terminal and use de command ***./GTASymlinkGenerator***. <br> <br> <br>
 
 
 ## STEPS TO FOLLOW
