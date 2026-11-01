@@ -1,6 +1,6 @@
 # GTA Symlink Generator
 ###### Created by: AlexRed29X
-###### Updated to: October 30th 2026
+###### Updated to: November 1st 2026
 
 <img width="720" height="560" alt="GTA-Symlink-Generator-logo" src="https://github.com/user-attachments/assets/3aed5ee0-9a55-49db-94a3-b367a3cc12e2" />
 
@@ -9,7 +9,7 @@
 
 If you are here, I assume you have seen the video to create a GTA installation, using **Symbolic Links**.
 
-### **Have you not seen the video?** <br> [**Click here!**](https://youtu.be/zpb7t7_fB4E) <br> <br>
+### **Have you not seen the video?** <br> [**Click here!**](https://youtu.be/ZWhh92Cl93I) <br> <br>
 
 
 ## What is a Symbolic Link ("Symlink")?
