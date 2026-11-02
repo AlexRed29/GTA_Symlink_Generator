@@ -53,10 +53,9 @@ I present to you this little tool to create a **GTA "Symlink"**! <br>
 There is no need to copy/paste the same GTA San Andreas (4.68 GB) to another location; the game will now be a "GTA SA Symlink" (35.5 MB)! <br>
 This means saving disk space! <br>
 
-<img width="830" height="441" alt="symlink-gta" src="https://github.com/user-attachments/assets/f9f8ae09-f93c-4551-9168-01664f4268bb" /> <br>
+<img width="918" height="1286" alt="GTASymlinkGeneratorComparison" src="https://github.com/user-attachments/assets/eee16ca0-2b4e-408c-9530-9b9e37b7c6ff" />
 
-
-
+<br>
 
 **NOTE:** Not only can we create *"Symlinks"* for complete installations, we can also create **"Symlinks"** to install heavy mods (Such as ***RoSA Evolved, Proper Fixes, Original Radio Extended, etc.***)! <br> 
 
@@ -78,13 +77,13 @@ This means saving disk space! <br>
 - Portable (No need to install anything!).
 <br> <br> <br>
 
-# INSTALLATION (Windows)
+## INSTALLATION (Windows)
 ### 1. Let's [**"Releases"**](https://github.com/AlexRed29/GTASymlinkGenerator/releases)
 ### 2. Let's download the ***".zip"***.
 ### 3. We are going to extract the ".zip" with 7Zip or WinRAR*.
 ### 4. Open the program and the steps to create our **"GTA Symlink"**. <br> <br> 
 
-# INSTALLATION (Linux)
+## INSTALLATION (Linux)
 ### 1. Let's [**"Releases"**](https://github.com/AlexRed29/GTASymlinkGenerator/releases)
 ### 2. Let's download the ***".tar.gz"***.
 ### 3. We are going to extract the compressed file with 7Zip or WinRAR*.
@@ -104,6 +103,9 @@ Select whether we will create a ***"GTA Symlink"*** or a ***"Mod Symlink"*** for
 4. Press the corresponding buttons on the keyboard
 5. Perfect! You now have your **GTA "Symlink"**! <br> <br>
 
+<img width="1828" height="1017" alt="GTA-Symlink-result" src="https://github.com/user-attachments/assets/9f869f2a-d18b-4b41-a68e-81fbc502bbb8" />
+
+<br> <br>
 
 ### CREATING A "MOD SYMLINK"
 1. Paste the **SOURCE Path (Original Mod Folder)**.
