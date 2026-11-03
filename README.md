@@ -1,15 +1,19 @@
 # GTA Symlink Generator
 ###### Created by: AlexRed29X
-###### Updated to: November 1st 2026
+###### Updated to: November 3rd 2026
 
-<img width="720" height="560" alt="GTA-Symlink-Generator-logo" src="https://github.com/user-attachments/assets/3aed5ee0-9a55-49db-94a3-b367a3cc12e2" />
+<img width="720" height="560" alt="GTA-Symlink-Logo-2" src="https://github.com/user-attachments/assets/d6b3d0e7-e4d5-4f35-8031-3a80e33e672f" />
 
 
 ### Welcome to the GTA "Symlink Generator" repository!
-
 If you are here, I assume you have seen the video to create a GTA installation, using **Symbolic Links**.
 
 ### **Have you not seen the video?** <br> [**Click here!**](https://youtu.be/ZWhh92Cl93I) <br> <br>
+
+
+
+### [What is a Symbolic Link?](#what-is-a-symbolic-link-symlink)
+
 
 
 ## What is a Symbolic Link ("Symlink")?
@@ -80,14 +84,15 @@ This means saving disk space! <br>
 ## INSTALLATION (Windows)
 ### 1. Let's [**"Releases"**](https://github.com/AlexRed29/GTASymlinkGenerator/releases)
 ### 2. Let's download the ***".zip"***.
-### 3. We are going to extract the ".zip" with 7Zip or WinRAR*.
-### 4. Open the program and the steps to create our **"GTA Symlink"**. <br> <br> 
+### 3. We are going to extract the ".zip" with 7Zip or WinRAR.
+### 4. *Run as Administrator* (For creating Symlinks on Windows)
+### 5. Folllow the steps to create our **"GTA Symlink"**. <br> <br> 
 
 ## INSTALLATION (Linux)
 ### 1. Let's [**"Releases"**](https://github.com/AlexRed29/GTASymlinkGenerator/releases)
 ### 2. Let's download the ***".tar.gz"***.
-### 3. We are going to extract the compressed file with 7Zip or WinRAR*.
-### 4. Open the Linux terminal and use the command ***./GTASymlinkGenerator*** .<br> <br> <br>
+### 3. We are going to extract the compressed file with 7Zip or WinRAR.
+### 4. Open the Linux terminal and use the command *./GTASymlinkGenerator* <br> <br> <br>
 
 
 ## STEPS TO FOLLOW
@@ -118,8 +123,8 @@ Select whether we will create a ***"GTA Symlink"*** or a ***"Mod Symlink"*** for
 4. Perfect! You now have your **"Mod Symlink"**! <br> <br> <br>
 
 
-# IMPORTANT! VERY VERY IMPORTANT!
-### DO NOT make a "GTA Symlink" for Total Conversion mods!
+# TOTAL CONVERSION MODS (VERY IMPORTANT!)
+### DON'T make a "GTA Symlink" for Total Conversion mods!
 **Total Conversion** mods are known for replacing the **MOST IMPORTANT GTA files** (***"Anim", "Audio", "Data", "Models"***). <br>
 
 **Examples of these mods:**
@@ -156,6 +161,7 @@ These mods are known as **"Repack"** or **"Modloader Support"**! <br>
 - GTA Gostown Paradise (Modloader REPACK)
 - GTA Alien City (Modloader Support)
 - GTA Mushroomia (Modloader Support)
+- Misterix Mod (Modloader)
 
 <br> <br> 
 
