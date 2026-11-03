@@ -11,10 +11,16 @@ If you are here, I assume you have seen the video to create a GTA installation, 
 ### **Have you not seen the video?** <br> [**Click here!**](https://youtu.be/ZWhh92Cl93I) <br> <br>
 
 
+# INDEX
+### [What is a Symbolic Link?](#what-is-a-symbolic-link-symlink) <br> 
+### [GTA Symlink Generator](#gta-symlink-generator-1) <br>
+### [INSTALLATION](#installation-windows) <br>
+### [STEPS TO FOLLOW](#steps-to-follow) <br>
+### [TOTAL CONVERSION MODS (VERY IMPORTANT!)](#total-conversion-mods) 
 
-### [What is a Symbolic Link?](#what-is-a-symbolic-link-symlink)
 
 
+<br> <br> <br>
 
 ## What is a Symbolic Link ("Symlink")?
 **"Symbolic Links"** or **"Symlinks"**, in a nutshell, are like **"Advanced Shortcuts".** <br>
@@ -123,7 +129,7 @@ Select whether we will create a ***"GTA Symlink"*** or a ***"Mod Symlink"*** for
 4. Perfect! You now have your **"Mod Symlink"**! <br> <br> <br>
 
 
-# TOTAL CONVERSION MODS (VERY IMPORTANT!)
+# TOTAL CONVERSION MODS
 ### DON'T make a "GTA Symlink" for Total Conversion mods!
 **Total Conversion** mods are known for replacing the **MOST IMPORTANT GTA files** (***"Anim", "Audio", "Data", "Models"***). <br>
 
