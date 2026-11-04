@@ -69,7 +69,8 @@ This means saving disk space! <br>
 
 **NOTE:** Not only can we create *"Symlinks"* for complete installations, we can also create **"Symlinks"** to install heavy mods (Such as ***RoSA Evolved, Proper Fixes, Original Radio Extended, etc.***)! <br> 
 
-<img width="830" height="441" alt="mod-symlink" src="https://github.com/user-attachments/assets/50a81dce-26b8-42da-8fdb-3bb8b0fde18d" /> <br>
+<img width="1920" height="1080" alt="GTA Mod Symlink" src="https://github.com/user-attachments/assets/6640a3d4-80fd-44b3-a161-af2f4af5af7e" />
+ <br>
 
 ## SUPPORTED GAMES:
 - **Grand Theft Auto III PC (1.0)**
