@@ -1,6 +1,6 @@
 # GTA Symlink Generator
 ###### Created by: AlexRed29X
-###### Updated to: November 3rd 2026
+###### Updated to: November 4th 2026
 
 <img width="720" height="560" alt="GTA-Symlink-Logo-2" src="https://github.com/user-attachments/assets/d6b3d0e7-e4d5-4f35-8031-3a80e33e672f" />
 
@@ -61,16 +61,15 @@ I present to you this little tool to create a **GTA "Symlink"**! <br>
 **"GTA Symlink Generator"** is a small Tool that allows us to create a GTA installation, using **"Symlinks"**. What this command does is ask us for the **"SOURCE path (GTA Vanilla / Without Mods)"**, and the **"DESTINATION path"** where we are going to install our **"GTA Symlink"**. <br> 
 
 There is no need to copy/paste the same GTA San Andreas (4.68 GB) to another location; the game will now be a "GTA SA Symlink" (35.5 MB)! <br>
-This means saving disk space! <br>
-
+This means saving disk space! <br> 
 <img width="918" height="1286" alt="GTASymlinkGeneratorComparison" src="https://github.com/user-attachments/assets/eee16ca0-2b4e-408c-9530-9b9e37b7c6ff" />
 
-<br>
+<br> 
 
 **NOTE:** Not only can we create *"Symlinks"* for complete installations, we can also create **"Symlinks"** to install heavy mods (Such as ***RoSA Evolved, Proper Fixes, Original Radio Extended, etc.***)! <br> 
 
 <img width="1920" height="1080" alt="GTA Mod Symlink" src="https://github.com/user-attachments/assets/6640a3d4-80fd-44b3-a161-af2f4af5af7e" />
- <br>
+ <br> <br> 
 
 ## SUPPORTED GAMES:
 - **Grand Theft Auto III PC (1.0)**
