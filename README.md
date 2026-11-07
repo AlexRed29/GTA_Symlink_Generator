@@ -1,6 +1,6 @@
 # GTA Symlink Generator
 ###### Created by: AlexRed29X
-###### Updated to: November 4th 2026
+###### Updated to: November 6th 2026
 
 <img width="720" height="560" alt="GTA-Symlink-Logo-2" src="https://github.com/user-attachments/assets/d6b3d0e7-e4d5-4f35-8031-3a80e33e672f" />
 
@@ -88,17 +88,10 @@ This means saving disk space! <br>
 <br> <br> <br>
 
 ## INSTALLATION (Windows)
-### 1. Let's [**"Releases"**](https://github.com/AlexRed29/GTASymlinkGenerator/releases)
-### 2. Let's download the ***".zip"***.
-### 3. We are going to extract the ".zip" with 7Zip or WinRAR.
-### 4. *Run as Administrator* (For creating Symlinks on Windows)
-### 5. Folllow the steps to create our **"GTA Symlink"**. <br> <br> 
+### 1. Let's [**"Releases"**](https://github.com/AlexRed29/GTASymlinkGenerator/releases) <br>  2. Let's download the ***".zip"***. <br>  3. We are going to extract the ".zip" with 7Zip or WinRAR. <br>  4. *Run as Administrator* (For creating Symlinks on Windows) <br>  5. Folllow the steps to create our **"GTA Symlink"**. <br> <br> 
 
 ## INSTALLATION (Linux)
-### 1. Let's [**"Releases"**](https://github.com/AlexRed29/GTASymlinkGenerator/releases)
-### 2. Let's download the ***".tar.gz"***.
-### 3. We are going to extract the compressed file with 7Zip or WinRAR.
-### 4. Open the Linux terminal and use the command *./GTASymlinkGenerator* <br> <br> <br>
+### 1. Let's [**"Releases"**](https://github.com/AlexRed29/GTASymlinkGenerator/releases) <br>  2. Let's download the ***".tar.gz"***. <br> 3. We are going to extract the compressed file with 7Zip or WinRAR. <br> 4. Open the Linux terminal and use the command *./GTASymlinkGenerator* <br> <br> <br>
 
 
 ## STEPS TO FOLLOW
@@ -130,8 +123,7 @@ Select whether we will create a ***"GTA Symlink"*** or a ***"Mod Symlink"*** for
 
 
 # TOTAL CONVERSION MODS
-### DON'T make a "GTA Symlink" for Total Conversion mods!
-**Total Conversion** mods are known for replacing the **MOST IMPORTANT GTA files** (***"Anim", "Audio", "Data", "Models"***). <br>
+As you know **Total Conversion** mods are known for replacing the **MOST IMPORTANT GTA files** (***"Anim", "Audio", "Data", "Models"***). <br>
 
 **Examples of these mods:**
 - GTA Frosted Winter
@@ -142,17 +134,17 @@ Select whether we will create a ***"GTA Symlink"*** or a ***"Mod Symlink"*** for
 - Project Eagle (Stars & Stripes)
 - GTA Forelli Redemption <br> <br>
 
-If we use "Symlinks" for Total Conversion mods, **WE WILL DAMAGE** the files of our **Original (No mods)** installation, and therefore, we will damage the other **"GTA Symlink"**. <br>
+If we use "Symlinks" for Total Conversion mods, **WE WILL CORRUPT** the files of our **Original (No mods)** installation, and therefore, we will damage the other **"GTA Symlink"**. <br>
 
 Fortunately **"GTA Symlink Generator"** warns us about this at the beginning.
 
 For **Total Conversion** mods, **YES OR YES** we are going to have to copy and paste the complete GTA. <br> <br>
 
 
-### Are there some "Total Conversion Mods" that we can install with a "GTA Symlink"?
+## Are there some "Total Conversion Mods" that we can install with a "GTA Symlink"?
 **Of course it does!** For our good luck we can install some "Total Conversion" mods on a "GTA Symlink". <br>
 
-**Mainly they are mods that do not modify any original file, or that only change the ***"Main.scm"***:** <br>
+**Mainly they are mods that do not modify any original file, or that only change the ***"Main.scm"***!** <br>
 - San Andreas Multiplayer (SA-MP)
 - Tenpenny Stories (Modloader)
 - Great Theft Car (Modloader)
@@ -160,7 +152,7 @@ For **Total Conversion** mods, **YES OR YES** we are going to have to copy and p
 - Vice Extended
 
 <br> And fortunately many mods were officially/unofficially updated to be installed by Modloader! <br>
-These mods are known as **"Repack"** or **"Modloader Support"**! <br>
+These mods are known as **"REPACK"** or **"Modloader Support"**! <br>
 
 **Examples of these mods are:** <br>
 - Things To Do In San Andreas (TTDISA OV)
